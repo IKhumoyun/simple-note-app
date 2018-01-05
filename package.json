@@ -1,0 +1,19 @@
+{
+  "name": "notes-node",
+  "version": "1.0.0",
+  "description": "This is sample notes application written in Node.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Khumoyun Inoyatov",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "4.17.4",
+    "yargs": "10.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "1.14.7"
+  }
+}
