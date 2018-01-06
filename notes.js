@@ -50,7 +50,7 @@ let logNote = (note) => {
 };
 
 let listAll = () => {
-    console.log(`You have notes`);
+    return fetchNotes();
 };
 
 module.exports = {

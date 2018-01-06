@@ -31,5 +31,9 @@ if(command === 'add') {
     let message = noteDeleted ? 'Note was removed' : 'Note not found';
     console.log(message);
 } else if (command === 'list') {
-    notes.listAll(argv.title);
+    let allNotes = notes.listAll(argv.title);
+    console.log(`Printing ${allNotes.length} note(s)`);
+    allNotes.forEach((note) => {
+        notes.logNote(note);
+    });
 }
