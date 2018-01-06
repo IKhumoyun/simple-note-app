@@ -15,11 +15,11 @@ let saveNotes = (notes) => {
 
 let addNote = (title,body) => {
     let notes = fetchNotes();
-    var note = {
+    const note = {
         title,
         body,
     };
-    var duplicateNotes = notes.filter((note) =>  note.title === title);
+    let duplicateNotes = notes.filter((note) =>  note.title === title);
 
     if(duplicateNotes.length === 0) {
         notes.push(note);
@@ -30,17 +30,23 @@ let addNote = (title,body) => {
 
 let readNote = (title) => {
     let notes = fetchNotes();
-    let reading = something;
-    
-    return reading;
+    let filteredNotes = notes.filter((note) =>  note.title === title);
+    return filteredNotes[0];
 };
 
 let deleteNote = (title) => {
     let notes = fetchNotes();
-    var filteredNotes = notes.filter((note) => note.title !== title);
+    let filteredNotes = notes.filter((note) => note.title !== title);
     saveNotes(filteredNotes);
 
     return notes.length !== filteredNotes.length;
+};
+
+let logNote = (note) => {
+    let notes = fetchNotes();
+    console.log('--');
+    console.log(`Body: ${note.title}`);
+    console.log(`Body: ${note.body}`);
 };
 
 let listAll = () => {
@@ -51,5 +57,6 @@ module.exports = {
     addNote: addNote,
     readNote: readNote,
     deleteNote: deleteNote,
-    listAll: listAll
+    logNote: logNote,
+    listAll: listAll,
 };

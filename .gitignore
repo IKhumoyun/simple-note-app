@@ -1,1 +1,5 @@
-./node_modules
+# Node modules ignored
+/node_modules
+
+#auto generated file
+notes-data.json
